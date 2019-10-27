@@ -15,7 +15,7 @@ echo "Voici le répertoire $rep: "
 echo "$localisation"
 echo ""
 #recherche du pattern dans $rep
-resultat_pattern=$(find $localisation -name $1 -exec grep -iLER $2 {} \;)
+resultat_pattern=$(find $localisation -name "$1" | xargs grep -iERl $1)
 
 echo "Voici les résultats correspondant au pattern renseigné: "
 echo "$resultat_pattern"
