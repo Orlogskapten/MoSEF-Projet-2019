@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#Gestion erreur nombres d'args
+if [ "$#" -ne 2 ]; then
+	echo "vous n'avez pas rentrer le bon nombre d'arguments"
+	echo "Pour rappel, il est demandé de spécifier 2 arguments"
+	exit
+fi
+
 echo "Démarrage de l'algorithme de recherche"
 jour_chiffre=$(date +%d)
 mois=$(date +%B)
@@ -15,7 +22,7 @@ echo "Voici le répertoire $rep: "
 echo "$localisation"
 echo ""
 #recherche du pattern dans $rep
-resultat_pattern=$(find $localisation -name "$1" | xargs grep -iERl "$2")
+resultat_pattern=$(find $localisation -name "$1" | xargs grep -iERl "$1")
 
 echo "Voici les résultats correspondant au pattern renseigné: "
 echo "$resultat_pattern"
