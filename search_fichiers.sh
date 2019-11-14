@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#Gestion erreur nombres d'args
+if [ "$#" -ne 2 ]; then
+	echo "vous n'avez pas rentrer le bon nombre d'arguments"
+	echo "Pour rappel, il est demandé de spécifier 2 arguments"
+	exit
+fi
+
 echo "Démarrage de l'algorithme de recherche"
 jour_chiffre=$(date +%d)
 mois=$(date +%B)
